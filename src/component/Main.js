@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Template1 from './template1/template1'
+import Template2 from './template2/template2'
 
 
 const styles = theme => ({
@@ -44,22 +45,25 @@ render(){
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={4}>
-          <Paper className={classes.paper}> Templete List </Paper>
+          <Paper className={classes.paper}> Template List </Paper>
           <Card className={classes.card}>
             <CardContent>
           
                 <button onClick={()=>{
-                  console.log(this.state.bool1);
+
                   
                   this.setState({bool1:true}); this.setState({bool2:false}); this.setState({bool3:false})
                   console.log(this.state.bool1);
                   
                   }}> 1</button>     
-                <button onClick={()=>{this.setState({bool1:false}); this.setState({bool2:true}); this.setState({bool3:false})}}> 2</button>     
-                <button onClick={()=>{this.setState({bool1:true}); this.setState({bool2:false}); this.setState({bool3:true})}}> 3</button>     
-              <Template1 />
+                <button onClick={()=>{
+                  this.setState({bool1:false}); this.setState({bool2:true}); this.setState({bool3:false})}}> 2</button>     
+                <button onClick={()=>{
+                  this.setState({bool1:true}); this.setState({bool2:false}); this.setState({bool3:true})}}> 3</button>     
+    
+              <Template2 />
             {this.state.bool1 ? <Template1 /> : null}
-            {this.state.bool2 ? <Template1 /> : null}
+            {this.state.bool2 ? <Template2 /> : null}
             {this.state.bool3 ? <Template1 /> : null}
             {this.state.bool1 ? 'dsdsdsd': 'ssssssdshakdjh'}
 
@@ -101,6 +105,7 @@ render(){
 
               </Button>
             {this.state.bool1 ? <Template1 /> : null}
+            {this.state.bool2 ? <Template2 /> : null}
 
             </div>
 

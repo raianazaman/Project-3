@@ -48,7 +48,7 @@ function SearchAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position="static" color="default" className={classes.appBar}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
              <MenuIcon />

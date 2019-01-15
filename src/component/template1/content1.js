@@ -38,20 +38,7 @@ const styles = theme => ({
   }
 });
 
-const ranges = [
-  {
-    value: "0-20",
-    label: "0 to 20"
-  },
-  {
-    value: "21-50",
-    label: "21 to 50"
-  },
-  {
-    value: "51-100",
-    label: "51 to 100"
-  }
-];
+
 
 class InputAdornments extends React.Component {
   state = {
@@ -104,23 +91,11 @@ class InputAdornments extends React.Component {
           />
         </FormControl>
 
-        <FormControl fullWidth className={classes.margin}>
-          <InputLabel htmlFor="adornment-amount">
-            {" "}
-            Re-Type Email address{" "}
-          </InputLabel>
-          <Input
-            id="adornment-amount"
-            value={this.state.amount}
-            onChange={this.handleChange("amount")}
-            startAdornment={<InputAdornment position="start"> </InputAdornment>}
-          />
-        </FormControl>
 
         <FormControl className={classNames(classes.margin, classes.textField)}>
-          <InputLabel htmlFor="adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="password">Password</InputLabel>
           <Input
-            id="adornment-password"
+            id="password"
             type={this.state.showPassword ? "text" : "password"}
             value={this.state.password}
             onChange={this.handleChange("password")}
@@ -137,25 +112,6 @@ class InputAdornments extends React.Component {
           />
         </FormControl>
 
-        <FormControl className={classNames(classes.margin, classes.textField)}>
-          <InputLabel htmlFor="adornment-password">Re-type Password</InputLabel>
-          <Input
-            id="adornment-password"
-            type={this.state.showPassword ? "text" : "password"}
-            value={this.state.password}
-            onChange={this.handleChange("password")}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="Toggle password visibility"
-                  onClick={this.handleClickShowPassword}
-                >
-                  {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
         <div>
           <Button variant="outlined" className={classes.button}>
             Sign Up
